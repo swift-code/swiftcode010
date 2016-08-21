@@ -16,6 +16,9 @@ public class Profile extends Model {
     @GeneratedValue(strategy = GenerationType.AUTO)
     public Long id;
 
+
+    public static Finder<Long, Profile> find = new Finder<Long, Profile>(Profile.class);
+
     public String firstName;
     public String lastName;
     public String company;

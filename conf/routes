@@ -3,5 +3,17 @@
 # ~~~~
 
 # Map static resources from the /public folder to the /assets URL path
-GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
-POST    /signup                     controllers.Application.signup()
+GET     /assets/*file                               controllers.Assets.versioned(path="/public", file: Asset)
+
+
+POST    /login                                      controllers.Application.login()
+POST    /signup                                     controllers.Application.signup()
+
+POST    /request/send/:senderId/:receiverId         controllers.ConnectionController.sendConnectionRequest(senderId: Long, receiverId: Long)
+POST    /request/accept/:id                         controllers.ConnectionController.acceptConnectionRequest(id: Long)
+
+GET     /profile/:id                                controllers.HomeController.getProfile(id: Long)
+PUT     /profile/:id                                controllers.HomeController.updateProfile(id: Long)
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file                               controllers.Assets.versioned(path="/public", file: Asset)
